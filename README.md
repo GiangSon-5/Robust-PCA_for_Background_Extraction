@@ -1,5 +1,11 @@
 # Robust PCA for Background Extraction
 
+# I am using Kaggle's GPU for my project, and here is the link to my project (If you can't access it, it's because I set it to private mode): 
+[Kaggle Notebook: Robust-PCA_for_Background_Extraction](https://www.kaggle.com/code/nguyenquyetgiangson/robust-pca-for-background-extraction)
+
+# DEMO
+![Demo](https://github.com/GiangSon-5/Robust-PCA_for_Background_Extraction/blob/main/images/demo.jpg)
+
 ## Introduction
 
 This project implements Robust Principal Component Analysis (RPCA) to extract the background from video sequences. RPCA is a powerful technique for decomposing a matrix (in this case, a sequence of video frames) into two components: a low-rank component representing the static background and a sparse component capturing moving objects, foreground details, and noise. This decomposition is particularly useful for background subtraction, a fundamental task in computer vision with applications in surveillance, object tracking, and motion analysis.
