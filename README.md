@@ -10,17 +10,17 @@
 
 > The classical _Principal Component Analysis_ (PCA) is widely used for high-dimensional analysis and dimensionality reduction. Mathematically, if all the data points are stacked as column vectors of a (n, m)matrix $M$, PCA tries to decompose $M$ as
 > 
-> $$M = L + S,$$
+> $$M = L + S$$
 > 
 > where $L$ is a rank $k$ ($k<\min(n,m)$) matrix and $S$ is some perturbation/noise matrix. To obtain $L$, PCA solves the following optimization problem
 > 
-> $$\min_{L} ||M-L||_2,$$
+> $$\min_{L} ||M-L||_2$$
 > 
 > given that rank($L$) <= $k$. However, the effectiveness of PCA relies on the assumption of the noise matrix $S$: $s_{i,j}$ is small and i.i.d. Gaussian. That means PCA is not robust to outliers in data $M$.
 > 
 > To resolve this issue, Candes, Emmanuel J. et al proposed _Robust Principal Component Analysis_ (Robust PCA or RPCA). The objective is still trying to decompose $M$ into $L$ and $S$, but instead optimizing the following problem
 > 
-> ![Equation](https://latex.codecogs.com/svg.image?\min_{L,S}%20||L||_{*}%20+%20\lambda||S||_{1})
+>  <img src="https://github.com/GiangSon-5/Robust-PCA_for_Background_Extraction/blob/main/images/equation.jpg" />
 > 
 > subject to $L+S = M$.
 > 
