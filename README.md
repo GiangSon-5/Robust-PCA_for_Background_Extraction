@@ -20,7 +20,7 @@
 > 
 > To resolve this issue, Candes, Emmanuel J. et al proposed _Robust Principal Component Analysis_ (Robust PCA or RPCA). The objective is still trying to decompose $M$ into $L$ and $S$, but instead optimizing the following problem
 > 
-> $$ \min_{L,S} ||L||_{*} + \lambda||S||_{1}$$
+> ![Equation](https://latex.codecogs.com/svg.image?\min_{L,S}%20||L||_{*}%20+%20\lambda||S||_{1})
 > 
 > subject to $L+S = M$.
 > 
