@@ -6,6 +6,35 @@
 # DEMO
 ![Demo](https://github.com/GiangSon-5/Robust-PCA_for_Background_Extraction/blob/main/images/demo.jpg)
 
+# Robust PCA
+
+> The classical _Principal Component Analysis_ (PCA) is widely used for high-dimensional analysis and dimensionality reduction. Mathematically, if all the data points are stacked as column vectors of a (n, m)matrix $M$, PCA tries to decompose $M$ as
+> 
+> $$M = L + S,$$
+> 
+> where $L$ is a rank $k$ ($k<\min(n,m)$) matrix and $S$ is some perturbation/noise matrix. To obtain $L$, PCA solves the following optimization problem
+> 
+> $$\min_{L} ||M-L||_2,$$
+> 
+> given that rank($L$) <= $k$. However, the effectiveness of PCA relies on the assumption of the noise matrix $S$: $s_{i,j}$ is small and i.i.d. Gaussian. That means PCA is not robust to outliers in data $M$.
+> 
+> To resolve this issue, Candes, Emmanuel J. et al proposed _Robust Principal Component Analysis_ (Robust PCA or RPCA). The objective is still trying to decompose $M$ into $L$ and $S$, but instead optimizing the following problem
+> 
+> $$ \min_{L,S} ||L||_{*} + \lambda||S||_{1}$$
+> 
+> subject to $L+S = M$.
+> 
+> Minimizing the $l_1$-norm of $S$ is known to favour sparsity while minimizing the nuclear norm of $L$ is known to favour low-rank matrices (sparsity of singular values). In this way, $M$ is decomposed to a low-rank matrix but not sparse $L$ and a sparse but not low rank $S$. Here $S$ can be viewed as a sparse noise matrix. Robust PCA allows the separation of sparse but outlying values from the original data.
+> 
+> In addition, Zhou et al. further proposed a "stable" version of Robust PCA, which is called _Stable Principal Component Pursuit_ (Stable PCP or SPCP), which allows a non-sparse Gaussian noise term $Z$ in addition to $L$ and $S$:
+> 
+> $$M = L+S+Z.$$
+> 
+> Stable PCP is intuitively more practical since it combines the strength of classical PCA and Robust PCA. However, depending on the exact problem, the proper method should be selected.
+
+There are many [applications of Robust PCA](https://www.comp.nus.edu.sg/~cs5240/lecture/robust-pca.pdf). Here, we show a few examples of its applications.
+
+
 ## Introduction
 
 This project implements Robust Principal Component Analysis (RPCA) to extract the background from video sequences. RPCA is a powerful technique for decomposing a matrix (in this case, a sequence of video frames) into two components: a low-rank component representing the static background and a sparse component capturing moving objects, foreground details, and noise. This decomposition is particularly useful for background subtraction, a fundamental task in computer vision with applications in surveillance, object tracking, and motion analysis.
