@@ -32,7 +32,7 @@
 > 
 > Stable PCP is intuitively more practical since it combines the strength of classical PCA and Robust PCA. However, depending on the exact problem, the proper method should be selected.
 
-There are many [applications of Robust PCA](https://www.comp.nus.edu.sg/~leowwk/cs6101/AY2012-13%20Sem%201/rpca/slides.pdf). Here, we show a few examples of its applications.
+Link [Robust PCA](https://www.comp.nus.edu.sg/~leowwk/cs6101/AY2012-13%20Sem%201/rpca/slides.pdf). Here, we show a few examples of its applications.
 
 
 ## Introduction
